@@ -307,6 +307,16 @@ h1 {
   background: var(--button-secondary-bg);
 }
 
+.btn-tertiary {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
+.btn-tertiary:hover {
+  background: rgba(76, 201, 240, 0.12);
+}
+
 .hero-card,
 .card,
 .skill-group {
@@ -1003,5 +1013,59 @@ html.light-mode .footer p {
 
   .section {
     padding: 3.8rem 0;
+  }
+}
+
+@media print {
+  @page {
+    margin: 1.2cm;
+  }
+
+  body {
+    background: white !important;
+    color: #000 !important;
+  }
+
+  nav,
+  .mobile-menu-toggle,
+  .theme-toggle,
+  .intro-overlay,
+  .hero-badges,
+  .contact-actions,
+  .footer {
+    display: none !important;
+  }
+
+  .hero,
+  .section,
+  .contact-card,
+  .card,
+  .skill-group {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .container {
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .hero-text,
+  .hero-card,
+  .contact-card,
+  .card,
+  .skill-group {
+    break-inside: avoid;
+  }
+
+  * {
+    color: #000 !important;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.9em;
   }
 }
